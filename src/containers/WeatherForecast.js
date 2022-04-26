@@ -1,15 +1,22 @@
 import React, { Component } from "react";
+import WeatherForm from "../components/WeatherForm";
 
 class WeatherForecast extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { location: "" };
+
+    this.getLocation = this.getLocation.bind(this);
+  }
+
+  getLocation(loc) {
+    this.setState({ location: loc });
   }
 
   render() {
     return (
       <div className="weather-forecast">
-        <h1>Hello weather</h1>
+        <WeatherForm handleLocation={this.getLocation} />
       </div>
     );
   }
