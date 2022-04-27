@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WeatherForm from "../components/WeatherForm";
 import axios from "axios";
+import res from "../components/test.js";
 
 class WeatherForecast extends Component {
   constructor(props) {
@@ -31,9 +32,10 @@ class WeatherForecast extends Component {
   async setWeather() {
     const loc = this.state.location;
 
-    let weathRes =
-      await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=metric&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json
-    `);
+    console.log(res);
+
+    let weathRes = res;
+    // await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=metric&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
 
     this.setState({ weather: weathRes.data.days });
   }
