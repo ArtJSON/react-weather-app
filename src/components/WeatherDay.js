@@ -30,14 +30,16 @@ class WeatherDay extends Component {
         <i
           className={` wi ${conditionToIcon(this.props.weatherData.icon)}`}
         ></i>
-        <span className="weather-day-data tempmax">
-          {Math.floor(this.props.weatherData.tempmax) + 1}
-          {this.props.units}
-        </span>
-        <span className="weather-day-data tempmin">
-          {Math.floor(this.props.weatherData.tempmin)}
-          {this.props.units}
-        </span>
+        <div className="temps">
+          <span className="weather-day-data tempmax">
+            {Math.floor(this.props.weatherData.tempmax) + 1}
+            {this.props.units}
+          </span>
+          <span className="weather-day-data tempmin">
+            {Math.floor(this.props.weatherData.tempmin)}
+            {this.props.units}
+          </span>
+        </div>
       </div>
     );
   }

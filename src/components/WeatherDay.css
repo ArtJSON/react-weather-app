@@ -1,7 +1,8 @@
 .weather-day {
   display: flex;
-  width: fit-content;
+  justify-content: space-between;
   color: white;
+  width: 350px;
 }
 
 .weather-day-data {
@@ -19,11 +20,14 @@
   margin-right: 30px;
 }
 
+.temps {
+  display: flex;
+  justify-content: space-between;
+}
+
 .weather-day-data.tempmax {
-  width: 60px;
   margin-right: 20px;
 }
 
 .weather-day-data.tempmin {
-  width: 60px;
 }

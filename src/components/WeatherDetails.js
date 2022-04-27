@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import "../other/weather-icons.css";
 import conditionToIcon from "../utils/conditionToIcon";
+import "./WeatherDetails.css";
 
 class WeatherDetails extends Component {
   render() {
     return (
       <div className="weather-details">
-        <h1>Now</h1>
-        <i className={`wi ${conditionToIcon(this.props.weatherData.icon)}`}></i>
+        <h1>{this.props.location}</h1>
+        <i
+          className={`big-icon wi ${conditionToIcon(
+            this.props.weatherData.icon
+          )}`}
+        ></i>
         <p>
           {this.props.weatherData.temp}
           {this.props.units}

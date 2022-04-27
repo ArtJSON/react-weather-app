@@ -1,0 +1,17 @@
+.weather-details {
+  width: 350px;
+  padding: 1rem 1rem;
+  color: white;
+}
+
+.weather-details > *:last-child {
+  margin-bottom: 0;
+}
+
+.weather-details > *:first-child {
+  margin-top: 0;
+}
+
+i.big-icon {
+  font-size: 5rem;
+}

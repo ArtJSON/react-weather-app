@@ -1,10 +1,27 @@
+.weather-details {
+  background-color: #12223b;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
 .weather-days {
   background-color: #12223b;
   padding: 0.5rem;
   width: fit-content;
+  border-radius: 10px;
+}
+.weather-days > .weather-day {
+  padding: 0.5rem;
 }
 
-.weather-days > .weather-day {
+.weather-days > .weather-day:first-child {
+  padding-top: 0;
+}
+
+.weather-days > .weather-day:last-child {
+  padding-bottom: 0;
+}
+
+.weather-days > .weather-day:not(:last-child) {
   border-bottom: 1px solid #4588ba;
-  padding: 5px;
 }
