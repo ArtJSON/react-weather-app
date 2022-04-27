@@ -4,22 +4,20 @@
 }
 
 .weather-details.night {
-  background: rgb(18, 34, 59);
+  background: rgba(25, 25, 117, 1);
   background: linear-gradient(
     0deg,
-    rgba(18, 34, 59, 1) 25%,
-    rgba(25, 25, 117, 1) 25%,
+    rgba(25, 25, 117, 1) 0%,
     rgb(52, 52, 221) 100%
   );
 }
 
 .weather-details.day {
-  background: rgb(18, 34, 59);
+  background: rgb(77, 110, 175);
   background: linear-gradient(
     0deg,
-    rgba(18, 34, 59, 1) 25%,
-    rgb(77, 110, 175) 25%,
-    rgb(169, 194, 225) 100%
+    rgb(55, 94, 174) 0%,
+    rgb(135, 183, 198) 100%
   );
 }
 

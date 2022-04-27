@@ -30,16 +30,17 @@ class WeatherForecast extends Component {
     this.setWeather();
   }
 
-  setLocation(loc) {
-    this.setState({ location: loc });
+  async setLocation(loc) {
+    await this.setState({ location: loc });
     this.setWeather();
   }
 
   async setWeather() {
     const loc = this.state.location;
 
-    let weathRes = await res;
-    //await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
+    let weathRes = await axios.get(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
+    );
 
     this.setState({
       weather: weathRes.data.days,
