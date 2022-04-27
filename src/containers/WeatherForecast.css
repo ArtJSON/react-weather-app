@@ -49,3 +49,16 @@
 .weather-days > .weather-day:not(:last-child) {
   border-bottom: 1px solid #4588ba;
 }
+
+@media screen and (min-width: 1024px) {
+  .weather-forecast {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0.5rem auto;
+    width: fit-content;
+  }
+
+  .weather-details-container {
+    margin-right: 0.5rem;
+  }
+}

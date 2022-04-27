@@ -52,8 +52,8 @@ class WeatherForecast extends Component {
   render() {
     return this.state.weather.length ? (
       <div className="weather-forecast">
-        <WeatherForm handleLocation={this.setLocation} />
         <div className="weather-details-container">
+          <WeatherForm handleLocation={this.setLocation} />
           <WeatherDetails
             location={this.state.location}
             weatherData={this.state.currentWeather}

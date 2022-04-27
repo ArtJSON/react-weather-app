@@ -38,3 +38,13 @@
     width: 200px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .weather-day {
+    width: 500px;
+  }
+
+  .temps {
+    width: 180px;
+  }
+}

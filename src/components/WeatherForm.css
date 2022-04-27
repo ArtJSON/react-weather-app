@@ -43,3 +43,9 @@
     min-width: 600px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .controls-container {
+    min-width: 350px;
+  }
+}
