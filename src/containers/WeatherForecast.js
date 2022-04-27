@@ -4,6 +4,7 @@ import WeatherDay from "../components/WeatherDay";
 import axios from "axios";
 import res from "../components/test.js";
 import WeatherDetails from "../components/WeatherDetails";
+import "./WeatherForecast.css";
 
 class WeatherForecast extends Component {
   constructor(props) {

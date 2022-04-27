@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../other/weather-icons.css";
+import "./WeatherDay.css";
 import conditionToIcon from "../utils/conditionToIcon";
 
 class WeatherDay extends Component {
@@ -26,13 +27,15 @@ class WeatherDay extends Component {
     return (
       <div className="weather-day">
         <span className="weather-day-data day">{this.getDayFromDate()}</span>
-        <i className={`wi ${conditionToIcon(this.props.weatherData.icon)}`}></i>
-        <span className="weather-day-data temperature">
-          {this.props.weatherData.tempmax}
+        <i
+          className={` wi ${conditionToIcon(this.props.weatherData.icon)}`}
+        ></i>
+        <span className="weather-day-data tempmax">
+          {Math.floor(this.props.weatherData.tempmax) + 1}
           {this.props.units}
         </span>
-        <span className="weather-day-data temperature">
-          {this.props.weatherData.tempmin}
+        <span className="weather-day-data tempmin">
+          {Math.floor(this.props.weatherData.tempmin)}
           {this.props.units}
         </span>
       </div>

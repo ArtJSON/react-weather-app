@@ -1,0 +1,10 @@
+.weather-days {
+  background-color: #12223b;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+.weather-days > .weather-day {
+  border-bottom: 1px solid #4588ba;
+  padding: 5px;
+}

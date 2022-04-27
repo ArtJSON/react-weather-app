@@ -13,7 +13,7 @@ export default function conditionToIcon(condition) {
       return "wi-strong-wind";
       break;
     case "cloudy":
-      return "wi-cloudy";
+      return "wi-cloud";
       break;
     case "partly-cloudy-day":
       return "wi-day-cloudy";

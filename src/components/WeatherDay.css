@@ -1,0 +1,29 @@
+.weather-day {
+  display: flex;
+  width: fit-content;
+  color: white;
+}
+
+.weather-day-data {
+  font-weight: 300;
+}
+
+.weather-day-data.day {
+  width: 120px;
+}
+
+.weather-day > i {
+  position: relative;
+  top: 4px;
+  width: 20px;
+  margin-right: 30px;
+}
+
+.weather-day-data.tempmax {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.weather-day-data.tempmin {
+  width: 60px;
+}
