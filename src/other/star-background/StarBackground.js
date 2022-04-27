@@ -3,12 +3,7 @@ import "./StarBackground.css";
 
 class StarBackground extends Component {
   render() {
-    return (
-      <div className="background">
-        <div className="stars"></div>
-        <div className="twinkling"></div>
-      </div>
-    );
+    return <div class="sky"></div>;
   }
 }
 
