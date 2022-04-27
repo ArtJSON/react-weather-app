@@ -38,13 +38,15 @@ class WeatherForecast extends Component {
   async setWeather() {
     const loc = this.state.location;
 
-    let weathRes = await res; // axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
+    if (loc !== "") {
+      let weathRes = await res; // axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
 
-    this.setState({
-      weather: weathRes.data.days,
-      currentWeather: weathRes.data.currentConditions,
-      location: weathRes.data.resolvedAddress,
-    });
+      this.setState({
+        weather: weathRes.data.days,
+        currentWeather: weathRes.data.currentConditions,
+        location: weathRes.data.resolvedAddress,
+      });
+    }
   }
 
   render() {

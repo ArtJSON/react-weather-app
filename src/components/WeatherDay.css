@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   color: white;
-  width: 350px;
+  width: 270px;
 }
 
 .weather-day-data {
@@ -10,7 +10,7 @@
 }
 
 .weather-day-data.day {
-  width: 120px;
+  width: 90px;
 }
 
 .weather-day > i {
@@ -27,4 +27,14 @@
 }
 
 .weather-day-data.tempmax {
+}
+
+@media screen and (min-width: 680px) {
+  .weather-day {
+    width: 600px;
+  }
+
+  .temps {
+    width: 200px;
+  }
 }

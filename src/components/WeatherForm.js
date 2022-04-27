@@ -16,7 +16,10 @@ class WeatherForm extends Component {
   }
 
   handleSubmit(event) {
-    this.props.handleLocation(this.state.location);
+    if (this.state.location) {
+      this.props.handleLocation(this.state.location);
+    }
+
     event.preventDefault();
   }
 

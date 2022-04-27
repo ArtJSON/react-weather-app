@@ -2,7 +2,7 @@
   background-color: rgb(18, 34, 59);
   border-radius: 10px;
   padding: 1rem;
-  width: 350px;
+  min-width: 270px;
   margin-bottom: 0.5rem;
 }
 
@@ -36,4 +36,10 @@
 
 .form-container > button:hover {
   background-color: rgb(128, 162, 201);
+}
+
+@media screen and (min-width: 680px) {
+  .controls-container {
+    min-width: 600px;
+  }
 }
