@@ -11,22 +11,31 @@ class WeatherForecast extends Component {
     };
 
     this.setLocation = this.setLocation.bind(this);
+    this.setWeather = this.setWeather.bind(this);
   }
 
   async componentDidMount() {
-    let res = await axios.get("https://ipapi.co/json/");
+    let locRes = await axios.get("https://ipapi.co/json/");
 
-    let loc = `${res.data.country_name}, ${res.data.city}`;
+    let loc = `${locRes.data.country_name}, ${locRes.data.city}`;
 
     this.setState({ location: loc });
+
+    this.setWeather();
   }
 
   setLocation(loc) {
     this.setState({ location: loc });
   }
 
-  setWeather() {
-    const location = this.state.location;
+  async setWeather() {
+    const loc = this.state.location;
+
+    let weathRes =
+      await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=metric&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json
+    `);
+
+    this.setState({ weather: weathRes.data.days });
   }
 
   render() {
