@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../other/weather-icons.css";
 import "./WeatherDay.css";
 import conditionToIcon from "../utils/conditionToIcon";
+import TemperatureBar from "./TemperatureBar";
 
 class WeatherDay extends Component {
   getDayFromDate() {
@@ -34,6 +35,12 @@ class WeatherDay extends Component {
             {Math.floor(this.props.weatherData.tempmin)}
             {this.props.units}
           </span>
+          <TemperatureBar
+            maxAll={Math.floor(this.props.maxAll) + 1}
+            minAll={Math.floor(this.props.minAll)}
+            max={Math.floor(this.props.weatherData.tempmax) + 1}
+            min={Math.floor(this.props.weatherData.tempmin)}
+          />
           <span className="weather-day-data tempmax">
             {Math.floor(this.props.weatherData.tempmax) + 1}
             {this.props.units}

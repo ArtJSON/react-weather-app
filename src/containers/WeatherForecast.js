@@ -51,6 +51,11 @@ class WeatherForecast extends Component {
   }
 
   render() {
+    let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
+    let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
+
+    console.log(maxAll);
+
     return this.state.weather.length ? (
       <div className="weather-forecast">
         <div className="weather-details-container">
@@ -71,6 +76,8 @@ class WeatherForecast extends Component {
         <div className="weather-days">
           {this.state.weather.map((d) => (
             <WeatherDay
+              maxAll={maxAll}
+              minAll={minAll}
               weatherData={d}
               units={this.state.units === "metric" ? "°C" : "°F"}
             />
