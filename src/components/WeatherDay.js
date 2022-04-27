@@ -29,6 +29,11 @@ class WeatherDay extends Component {
         <i className={`wi ${conditionToIcon(this.props.weatherData.icon)}`}></i>
         <span className="weather-day-data temperature">
           {this.props.weatherData.tempmax}
+          {this.props.units}
+        </span>
+        <span className="weather-day-data temperature">
+          {this.props.weatherData.tempmin}
+          {this.props.units}
         </span>
       </div>
     );

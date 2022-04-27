@@ -5,12 +5,16 @@ import conditionToIcon from "../utils/conditionToIcon";
 class WeatherDetails extends Component {
   render() {
     return (
-      <div className="weather-day">
-        <span className="weather-day-data day">{this.getDayFromDate()}</span>
+      <div className="weather-details">
+        <h1>Now</h1>
         <i className={`wi ${conditionToIcon(this.props.weatherData.icon)}`}></i>
-        <span className="weather-day-data temperature">
-          {this.props.weatherData.tempmax}
-        </span>
+        <p>
+          {this.props.weatherData.temp}
+          {this.props.units}
+        </p>
+        <p>{this.props.weatherData.conditions}</p>
+        <p>{this.props.weatherData.sunrise}</p>
+        <p>{this.props.weatherData.sunset}</p>
       </div>
     );
   }
