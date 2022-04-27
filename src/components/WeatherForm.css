@@ -1,0 +1,23 @@
+.controls-container {
+  background-color: rgb(18, 34, 59);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 350px;
+  margin-bottom: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+}
+
+.form-container > input {
+  padding: 0.5rem;
+  min-width: 80%;
+  width: 100%;
+}
+
+.form-container > button {
+  padding: 0.5rem;
+  width: 10%;
+}

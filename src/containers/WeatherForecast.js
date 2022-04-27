@@ -44,6 +44,7 @@ class WeatherForecast extends Component {
     this.setState({
       weather: weathRes.data.days,
       currentWeather: weathRes.data.currentConditions,
+      location: weathRes.data.resolvedAddress,
     });
   }
 
@@ -51,9 +52,7 @@ class WeatherForecast extends Component {
     return this.state.weather.length ? (
       <div className="weather-forecast">
         <WeatherForm handleLocation={this.setLocation} />
-        <h1>Forecast for {this.state.location}</h1>
         <div className="weather-details-container">
-          {" "}
           <WeatherDetails
             location={this.state.location}
             weatherData={this.state.currentWeather}
