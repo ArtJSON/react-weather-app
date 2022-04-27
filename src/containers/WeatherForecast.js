@@ -4,6 +4,7 @@ import WeatherDay from "../components/WeatherDay";
 import axios from "axios";
 import res from "../components/test.js";
 import WeatherDetails from "../components/WeatherDetails";
+import WeatherMoreDetails from "../components/WeatherMoreDetails";
 import "./WeatherForecast.css";
 
 class WeatherForecast extends Component {
@@ -55,6 +56,12 @@ class WeatherForecast extends Component {
         <div className="weather-details-container">
           <WeatherForm handleLocation={this.setLocation} />
           <WeatherDetails
+            location={this.state.location}
+            weatherData={this.state.currentWeather}
+            weatherInfo={this.state.weather[0]}
+            units={this.state.units === "metric" ? "°C" : "°F"}
+          />
+          <WeatherMoreDetails
             location={this.state.location}
             weatherData={this.state.currentWeather}
             weatherInfo={this.state.weather[0]}
