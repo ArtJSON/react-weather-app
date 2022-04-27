@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import WeatherForm from "../components/WeatherForm";
+import WeatherDay from "../components/WeatherDay";
 import axios from "axios";
 import res from "../components/test.js";
 
@@ -45,7 +46,11 @@ class WeatherForecast extends Component {
       <div className="weather-forecast">
         <WeatherForm handleLocation={this.setLocation} />
         <h1>Forecast for {this.state.location}</h1>
-        <div className="weather-day">{this.state.weather.days}</div>
+        <div className="weather-days">
+          {this.state.weather.map((d) => (
+            <WeatherDay weatherData={d} />
+          ))}
+        </div>
       </div>
     );
   }

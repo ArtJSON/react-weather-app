@@ -2,26 +2,7 @@ import React, { Component } from "react";
 import "../other/weather-icons.css";
 import conditionToIcon from "../utils/conditionToIcon";
 
-class WeatherDay extends Component {
-  getDayFromDate() {
-    const date = new Date(this.props.weatherData.datetime);
-
-    let dayIndex = date.getDay();
-    console.log(date);
-
-    return (
-      [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ][dayIndex] || ""
-    );
-  }
-
+class WeatherDetails extends Component {
   render() {
     return (
       <div className="weather-day">
@@ -35,4 +16,4 @@ class WeatherDay extends Component {
   }
 }
 
-export default WeatherDay;
+export default WeatherDetails;
