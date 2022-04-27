@@ -49,3 +49,13 @@
     width: 350px;
   }
 }
+
+@media screen and (min-width: 1920px) {
+  .controls-container {
+    width: 600px;
+  }
+
+  .form-container > input {
+    font-size: 1.5rem;
+  }
+}

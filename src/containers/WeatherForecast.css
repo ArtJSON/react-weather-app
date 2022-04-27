@@ -33,6 +33,9 @@
   padding: 0.5rem;
   width: fit-content;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .weather-days > .weather-day {
   padding: 0.5rem;

@@ -48,3 +48,13 @@
     width: 180px;
   }
 }
+
+@media screen and (min-width: 1920px) {
+  .weather-day {
+    font-size: 1.75rem;
+    width: 800px;
+  }
+  .temps {
+    width: 280px;
+  }
+}

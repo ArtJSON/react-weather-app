@@ -67,3 +67,13 @@
     color: rgb(255, 22, 22);
   }
 }
+
+@media screen and (min-width: 1920px) {
+  .more-details {
+    width: 600px;
+  }
+
+  .detail-box {
+    font-size: 1.75rem;
+  }
+}
