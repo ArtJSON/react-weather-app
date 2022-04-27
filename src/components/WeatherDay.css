@@ -23,10 +23,7 @@
 .temps {
   display: flex;
   justify-content: space-between;
-}
-
-.weather-day-data.tempmin {
-  margin-right: 20px;
+  width: 130px;
 }
 
 .weather-day-data.tempmax {
