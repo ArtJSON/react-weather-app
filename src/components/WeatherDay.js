@@ -8,7 +8,6 @@ class WeatherDay extends Component {
     const date = new Date(this.props.weatherData.datetime);
 
     let dayIndex = date.getDay();
-    console.log(date);
 
     return (
       [
@@ -31,12 +30,12 @@ class WeatherDay extends Component {
           className={` wi ${conditionToIcon(this.props.weatherData.icon)}`}
         ></i>
         <div className="temps">
-          <span className="weather-day-data tempmax">
-            {Math.floor(this.props.weatherData.tempmax) + 1}
-            {this.props.units}
-          </span>
           <span className="weather-day-data tempmin">
             {Math.floor(this.props.weatherData.tempmin)}
+            {this.props.units}
+          </span>
+          <span className="weather-day-data tempmax">
+            {Math.floor(this.props.weatherData.tempmax) + 1}
             {this.props.units}
           </span>
         </div>

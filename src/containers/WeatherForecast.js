@@ -38,9 +38,7 @@ class WeatherForecast extends Component {
   async setWeather() {
     const loc = this.state.location;
 
-    console.log(res);
-
-    let weathRes = res;
+    let weathRes = await res;
     //await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
 
     this.setState({
@@ -50,14 +48,16 @@ class WeatherForecast extends Component {
   }
 
   render() {
-    return (
+    return this.state.weather.length ? (
       <div className="weather-forecast">
         <WeatherForm handleLocation={this.setLocation} />
         <h1>Forecast for {this.state.location}</h1>
         <div className="weather-details-container">
+          {" "}
           <WeatherDetails
             location={this.state.location}
             weatherData={this.state.currentWeather}
+            weatherInfo={this.state.weather[0]}
             units={this.state.units === "metric" ? "°C" : "°F"}
           />
         </div>
@@ -70,6 +70,8 @@ class WeatherForecast extends Component {
           ))}
         </div>
       </div>
+    ) : (
+      <div className="loading-screen">dasda</div>
     );
   }
 }

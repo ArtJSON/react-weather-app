@@ -1,7 +1,13 @@
 .weather-details {
   width: 350px;
-  padding: 1rem 1rem;
+  padding: 1rem;
   color: white;
+  text-align: center;
+}
+
+.location {
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .weather-details > *:last-child {
@@ -14,4 +20,19 @@
 
 i.big-icon {
   font-size: 5rem;
+}
+
+.sunrise-sunset {
+  display: flex;
+  justify-content: space-around;
+}
+
+.temperature {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.temprange {
+  font-size: 0.75rem;
+  margin-top: 0;
 }

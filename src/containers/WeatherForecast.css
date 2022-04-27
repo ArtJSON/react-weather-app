@@ -1,7 +1,26 @@
 .weather-details {
-  background-color: #12223b;
   border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+.weather-details.night {
+  background: rgb(18, 34, 59);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 34, 59, 1) 25%,
+    rgba(25, 25, 117, 1) 25%,
+    rgb(52, 52, 221) 100%
+  );
+}
+
+.weather-details.day {
+  background: rgb(18, 34, 59);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 34, 59, 1) 25%,
+    rgb(77, 110, 175) 25%,
+    rgb(169, 194, 225) 100%
+  );
 }
 
 .weather-days {

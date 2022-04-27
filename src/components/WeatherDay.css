@@ -25,9 +25,9 @@
   justify-content: space-between;
 }
 
-.weather-day-data.tempmax {
+.weather-day-data.tempmin {
   margin-right: 20px;
 }
 
-.weather-day-data.tempmin {
+.weather-day-data.tempmax {
 }
