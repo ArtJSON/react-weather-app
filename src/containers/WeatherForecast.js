@@ -5,9 +5,12 @@ import axios from "axios";
 class WeatherForecast extends Component {
   constructor(props) {
     super(props);
-    this.state = { location: "" };
+    this.state = {
+      location: "",
+      weather: [],
+    };
 
-    this.getLocation = this.getLocation.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
   async componentDidMount() {
@@ -18,15 +21,20 @@ class WeatherForecast extends Component {
     this.setState({ location: loc });
   }
 
-  getLocation(loc) {
+  setLocation(loc) {
     this.setState({ location: loc });
+  }
+
+  setWeather() {
+    const location = this.state.location;
   }
 
   render() {
     return (
       <div className="weather-forecast">
-        <WeatherForm handleLocation={this.getLocation} />
+        <WeatherForm handleLocation={this.setLocation} />
         <h1>Forecast for {this.state.location}</h1>
+        <div className="weather-day">{this.state.weather.days}</div>
       </div>
     );
   }
