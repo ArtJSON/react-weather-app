@@ -25,11 +25,9 @@ class WeatherForecast extends Component {
     let locRes = await axios.get("https://ipapi.co/json/");
     let loc = `${locRes.data.country_name}, ${locRes.data.city}`;
 
-    console.log("loc");
+    console.log(loc);
 
     this.setState({ location: loc });
-
-    console.log("come to setWEather");
 
     await this.setWeather();
   }
@@ -40,11 +38,7 @@ class WeatherForecast extends Component {
   }
 
   async setWeather() {
-    console.log("setWEather start");
-
     const loc = this.state.location;
-
-    console.log("come to if");
 
     if (loc !== "") {
       let weathRes = await axios.get(
@@ -56,10 +50,12 @@ class WeatherForecast extends Component {
         currentWeather: weathRes.data.currentConditions,
         location: weathRes.data.resolvedAddress,
       });
+      console.log("1");
     }
   }
 
   render() {
+    console.log("2");
     let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
     let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
 
