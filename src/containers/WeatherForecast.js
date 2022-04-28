@@ -25,8 +25,6 @@ class WeatherForecast extends Component {
     let locRes = await axios.get("https://ipapi.co/json/");
     let loc = `${locRes.data.country_name},${locRes.data.city}`;
 
-    console.log(loc);
-
     await this.setState({ location: loc });
 
     await this.setWeather();
@@ -39,11 +37,6 @@ class WeatherForecast extends Component {
 
   async setWeather() {
     const loc = this.state.location;
-
-    console.log(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
-    );
-    console.log(this.state);
 
     if (loc !== "") {
       let weathRes = await axios.get(
@@ -62,7 +55,7 @@ class WeatherForecast extends Component {
     let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
     let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
 
-    return this.state.weather.length === -1 ? (
+    return this.state.weather.length ? (
       <div className="weather-forecast">
         <div className="weather-details-container">
           <WeatherForm handleLocation={this.setLocation} />
