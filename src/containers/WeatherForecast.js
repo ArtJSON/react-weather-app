@@ -11,7 +11,7 @@ class WeatherForecast extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: "",
+      location: "Lodz,Poland",
       currentWeather: {},
       weather: [],
       units: "metric", //"us"
