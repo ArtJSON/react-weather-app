@@ -40,7 +40,9 @@ class WeatherForecast extends Component {
     const loc = this.state.location;
 
     if (loc !== "") {
-      let weathRes = await res; // axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`);
+      let weathRes = await axios.get(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
+      );
 
       this.setState({
         weather: weathRes.data.days,
@@ -84,7 +86,7 @@ class WeatherForecast extends Component {
         </div>
       </div>
     ) : (
-      <div className="loading-screen">dasda</div>
+      <div className="loading-screen">Loading</div>
     );
   }
 }
