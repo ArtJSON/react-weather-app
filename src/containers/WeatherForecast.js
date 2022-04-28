@@ -45,17 +45,16 @@ class WeatherForecast extends Component {
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
       );
 
-      this.setState({
+      await this.setState({
         weather: weathRes.data.days,
         currentWeather: weathRes.data.currentConditions,
         location: weathRes.data.resolvedAddress,
       });
-      console.log("1");
+      console.log(weathRes);
     }
   }
 
   render() {
-    console.log("2");
     let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
     let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
 
