@@ -44,12 +44,6 @@ class WeatherForecast extends Component {
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
       );
 
-      if (process.env.REACT_APP_WEATHER_API_KEY) {
-        console.log("It is set!");
-      } else {
-        console.log("No set!");
-      }
-
       this.setState({
         weather: weathRes.data.days,
         currentWeather: weathRes.data.currentConditions,
@@ -92,7 +86,9 @@ class WeatherForecast extends Component {
         </div>
       </div>
     ) : (
-      <div className="loading-screen">Loading</div>
+      <div className="loading-screen">
+        {process.env.REACT_APP_WEATHER_API_KEY}
+      </div>
     );
   }
 }
