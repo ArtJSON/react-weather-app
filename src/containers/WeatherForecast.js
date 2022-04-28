@@ -33,7 +33,7 @@ class WeatherForecast extends Component {
 
   async setLocation(loc) {
     await this.setState({ location: loc });
-    this.setWeather();
+    await this.setWeather();
   }
 
   async setWeather() {
@@ -86,9 +86,7 @@ class WeatherForecast extends Component {
         </div>
       </div>
     ) : (
-      <div className="loading-screen">
-        {process.env.REACT_APP_WEATHER_API_KEY}
-      </div>
+      <div className="loading-screen">Loading...</div>
     );
   }
 }
