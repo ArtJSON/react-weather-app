@@ -23,13 +23,13 @@ class WeatherForecast extends Component {
 
   async componentDidMount() {
     let locRes = await axios.get("https://ipapi.co/json/");
-    console.log("dasdasdasdas");
-
     let loc = `${locRes.data.country_name}, ${locRes.data.city}`;
+
+    console.log("loc");
 
     this.setState({ location: loc });
 
-    this.setWeather();
+    await this.setWeather();
   }
 
   async setLocation(loc) {
@@ -38,6 +38,8 @@ class WeatherForecast extends Component {
   }
 
   async setWeather() {
+    console.log("dasdasdasdas");
+
     const loc = this.state.location;
 
     if (loc !== "") {
