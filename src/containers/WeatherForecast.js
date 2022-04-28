@@ -62,7 +62,7 @@ class WeatherForecast extends Component {
     let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
     let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
 
-    return this.state.weather.length ? (
+    return this.state.weather.length === -1 ? (
       <div className="weather-forecast">
         <div className="weather-details-container">
           <WeatherForm handleLocation={this.setLocation} />
@@ -92,7 +92,7 @@ class WeatherForecast extends Component {
         </div>
       </div>
     ) : (
-      <div className="loading-screen">Loading...</div>
+      <div className="loading-screen"></div>
     );
   }
 }
