@@ -23,7 +23,7 @@ class WeatherForecast extends Component {
 
   async componentDidMount() {
     let locRes = await axios.get("https://ipapi.co/json/");
-    let loc = `${locRes.data.country_name}, ${locRes.data.city}`;
+    let loc = `${locRes.data.country_name},${locRes.data.city}`;
 
     console.log(loc);
 
@@ -50,7 +50,10 @@ class WeatherForecast extends Component {
         currentWeather: weathRes.data.currentConditions,
         location: weathRes.data.resolvedAddress,
       });
-      console.log(weathRes);
+      console.log(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?unitGroup=${this.state.units}&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`
+      );
+      console.log(this.state);
     }
   }
 
