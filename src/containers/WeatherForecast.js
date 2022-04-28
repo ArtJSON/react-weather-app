@@ -27,7 +27,7 @@ class WeatherForecast extends Component {
 
     console.log(loc);
 
-    this.setState({ location: loc });
+    await this.setState({ location: loc });
 
     await this.setWeather();
   }
