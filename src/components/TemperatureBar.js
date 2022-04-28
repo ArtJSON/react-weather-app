@@ -11,45 +11,36 @@ class TemperatureBar extends Component {
     maxAll: 50,
   };
 
-  render() {
+  generateHSLTemp(temp) {
+    let hue = 50 + (240 * (35 - temp)) / 65;
+    return `hsla(${hue}, 70%, 50%, 1) ${
+      ((temp - this.props.minAll) * 100) /
+      (this.props.maxAll - this.props.minAll)
+    }%, `;
+  }
+
+  generateBackgroudColor(temp) {
+    return ` #0c1526 ${
+      ((temp - this.props.minAll) * 100) /
+      (this.props.maxAll - this.props.minAll)
+    }%, `;
+  }
+
+  generateGradient() {
     let gradient = "linear-gradient(90deg,";
     for (let t = this.props.minAll; t < this.props.maxAll; t += 1) {
       if (t < this.props.min) {
-        gradient += ` #0c1526 ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
+        gradient += this.generateBackgroudColor(t);
       } else if (t === this.props.min) {
-        gradient += ` #0c1526 ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
-        let hue = 50 + (240 * (35 - t)) / 65;
-        gradient += `hsla(${hue}, 70%, 50%, 1) ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
+        gradient += this.generateBackgroudColor(t);
+        gradient += this.generateHSLTemp(t);
       } else if (t > this.props.min && t < this.props.max) {
-        let hue = 50 + (240 * (35 - t)) / 65;
-        gradient += `hsla(${hue}, 70%, 50%, 1) ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
+        gradient += this.generateHSLTemp(t);
       } else if (t === this.props.max) {
-        let hue = 50 + (240 * (35 - t)) / 65;
-        gradient += `hsla(${hue}, 70%, 50%, 1) ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
-        gradient += ` #0c1526 ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
+        gradient += this.generateHSLTemp(t);
+        gradient += this.generateBackgroudColor(t);
       } else {
-        gradient += ` #0c1526 ${
-          ((t - this.props.minAll) * 100) /
-          (this.props.maxAll - this.props.minAll)
-        }%, `;
+        gradient += this.generateBackgroudColor(t);
       }
     }
 
@@ -57,7 +48,16 @@ class TemperatureBar extends Component {
 
     gradient += ")";
 
-    return <div style={{ background: gradient }} className="temp-bar"></div>;
+    return gradient;
+  }
+
+  render() {
+    return (
+      <div
+        style={{ background: this.generateGradient() }}
+        className="temp-bar"
+      ></div>
+    );
   }
 }
 
