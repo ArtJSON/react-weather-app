@@ -54,8 +54,6 @@ class WeatherForecast extends Component {
     let maxAll = Math.max(...this.state.weather.map((d) => d.tempmax));
     let minAll = Math.min(...this.state.weather.map((d) => d.tempmin));
 
-    console.log(maxAll);
-
     return this.state.weather.length ? (
       <div className="weather-forecast">
         <div className="weather-details-container">
@@ -76,6 +74,7 @@ class WeatherForecast extends Component {
         <div className="weather-days">
           {this.state.weather.map((d) => (
             <WeatherDay
+              key={d.datetimeEpoch}
               maxAll={maxAll}
               minAll={minAll}
               weatherData={d}

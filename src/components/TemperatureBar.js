@@ -6,9 +6,9 @@ import "./TemperatureBar.css";
 class TemperatureBar extends Component {
   static defaultProps = {
     min: 0,
-    max: 10,
-    minAll: -1,
-    maxAll: 11,
+    max: 20,
+    minAll: -50,
+    maxAll: 50,
   };
 
   render() {

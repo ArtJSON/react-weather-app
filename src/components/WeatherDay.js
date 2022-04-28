@@ -36,6 +36,7 @@ class WeatherDay extends Component {
             {this.props.units}
           </span>
           <TemperatureBar
+            key={this.props.weatherData.datetimeEpoch}
             maxAll={Math.floor(this.props.maxAll) + 1}
             minAll={Math.floor(this.props.minAll)}
             max={Math.floor(this.props.weatherData.tempmax) + 1}
