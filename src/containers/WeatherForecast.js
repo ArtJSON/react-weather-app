@@ -29,6 +29,8 @@ class WeatherForecast extends Component {
 
     this.setState({ location: loc });
 
+    console.log("come to setWEather");
+
     await this.setWeather();
   }
 
@@ -38,9 +40,11 @@ class WeatherForecast extends Component {
   }
 
   async setWeather() {
-    console.log("dasdasdasdas");
+    console.log("setWEather start");
 
     const loc = this.state.location;
+
+    console.log("come to if");
 
     if (loc !== "") {
       let weathRes = await axios.get(
